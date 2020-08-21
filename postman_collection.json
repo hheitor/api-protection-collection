@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "548d605c-12e1-4e11-8bae-71fc59202458",
+		"_postman_id": "e5c72ab8-1d0a-49fd-ad71-6b8c7a7da43d",
 		"name": "API Protection Collection",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -21,11 +21,10 @@
 				],
 				"url": {
 					"raw": "https://{{api-backend}}/api/full_book_catalogs/",
-					"protocol": "http",
+					"protocol": "https",
 					"host": [
 						"{{api-backend}}"
 					],
-					"port": "443",
 					"path": [
 						"api",
 						"full_book_catalogs",
@@ -55,7 +54,6 @@
 					"host": [
 						"{{api-backend}}"
 					],
-					"port": "443",
 					"path": [
 						"api",
 						"full_book_catalogs",
@@ -76,7 +74,6 @@
 					"host": [
 						"{{api-backend}}"
 					],
-					"port": "443",
 					"path": [
 						"api",
 						"full_book_catalogs",
@@ -127,7 +124,6 @@
 					"host": [
 						"{{api-backend}}"
 					],
-					"port": "443",
 					"path": [
 						"api",
 						"full_book_catalogs"
@@ -162,7 +158,6 @@
 					"host": [
 						"{{api-backend}}"
 					],
-					"port": "443",
 					"path": [
 						"api",
 						"full_book_catalogs"
@@ -386,5 +381,6 @@
 				"type": "string"
 			}
 		]
-	}
+	},
+	"protocolProfileBehavior": {}
 }
