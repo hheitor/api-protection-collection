@@ -204,12 +204,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{big-ip}}/full_book_catalogs/",
+					"raw": "https://{{big-ip}}/api/full_book_catalogs/",
 					"protocol": "https",
 					"host": [
 						"{{big-ip}}"
 					],
 					"path": [
+						"api",
 						"full_book_catalogs",
 						""
 					]
@@ -243,12 +244,13 @@
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "https://{{big-ip}}/full_book_catalogs/1",
+					"raw": "https://{{big-ip}}/api/full_book_catalogs/1",
 					"protocol": "https",
 					"host": [
 						"{{big-ip}}"
 					],
 					"path": [
+						"api",
 						"full_book_catalogs",
 						"1"
 					]
@@ -292,12 +294,13 @@
 					"raw": "{\n  \"title\": \"Unlocking Android\",\n  \"isbn\": \"1933988673\",\n  \"pageCount\": 416,\n  \"publishedDate\": \"2009-04-01T07:00:00.000Z\",\n  \"thumbnailUrl\": \"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg\",\n  \"shortDescription\": \"Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.\",\n  \"longDescription\": \"Android is an open source mobile phone platform based on the Linux operating system and developed by the Open Handset Alliance, a consortium of over 30 hardware, software and telecom companies that focus on open standards for mobile devices. Led by search giant, Google, Android is designed to deliver a better and more open and cost effective mobile experience.    Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout. Based on his mobile development experience and his deep knowledge of the arcane Android technical documentation, the author conveys the know-how you need to develop practical applications that build upon or replace any of Androids features, however small.    Unlocking Android: A Developer's Guide prepares the reader to embrace the platform in easy-to-understand language and builds on this foundation with re-usable Java code examples. It is ideal for corporate and hobbyists alike who have an interest, or a mandate, to deliver software functionality for cell phones.    WHAT'S INSIDE:        * Android's place in the market      * Using the Eclipse environment for Android development      * The Intents - how and why they are used      * Application classes:            o Activity            o Service            o IntentReceiver       * User interface design      * Using the ContentProvider to manage data      * Persisting data with the SQLite database      * Networking examples      * Telephony applications      * Notification methods      * OpenGL, animation & multimedia      * Sample Applications  \",\n  \"status\": \"PUBLISH\",\n  \"authors\": [\n    \"W. Frank Ableson\",\n    \"Charlie Collins\",\n    \"Robi Sen\"\n  ],\n  \"categories\": [\n    \"Open Source\",\n    \"Mobile\"\n  ],\n     \"id\": 1\n}"
 				},
 				"url": {
-					"raw": "https://{{big-ip}}/full_book_catalogs",
+					"raw": "https://{{big-ip}}/api/full_book_catalogs",
 					"protocol": "https",
 					"host": [
 						"{{big-ip}}"
 					],
 					"path": [
+						"api",
 						"full_book_catalogs"
 					]
 				}
@@ -343,12 +346,13 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{big-ip}}/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; while(true); }\"  } }",
+					"raw": "https://{{big-ip}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; while(true); }\"  } }",
 					"protocol": "https",
 					"host": [
 						"{{big-ip}}"
 					],
 					"path": [
+						"api",
 						"full_book_catalogs"
 					],
 					"query": [
