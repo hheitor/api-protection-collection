@@ -1,12 +1,12 @@
 {
 	"info": {
-		"_postman_id": "e5c72ab8-1d0a-49fd-ad71-6b8c7a7da43d",
-		"name": "API Protection Collection",
+		"_postman_id": "3785c3bf-3714-4c66-a4d3-64a2071669ff",
+		"name": "Latam Bootcamp - API protection Lab",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "API Bookstore  - GET",
+			"name": "API Bookstore - GET",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -20,22 +20,22 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{api-backend}}/api/full_book_catalogs/",
+					"raw": "https://{{api-server}}//api/full_book_catalogs",
 					"protocol": "https",
 					"host": [
-						"{{api-backend}}"
+						"{{api-server}}"
 					],
 					"path": [
+						"",
 						"api",
-						"full_book_catalogs",
-						""
+						"full_book_catalogs"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "API Bookstore  - COUNT",
+			"name": "API Bookstore - GET Exist ID",
 			"request": {
 				"auth": {
 					"type": "noauth"
@@ -44,15 +44,136 @@
 				"header": [
 					{
 						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{api-server}}/api/full_book_catalogs/48/exists",
+					"protocol": "https",
+					"host": [
+						"{{api-server}}"
+					],
+					"path": [
+						"api",
+						"full_book_catalogs",
+						"48",
+						"exists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Bookstore - GET ID",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{api-server}}/api/full_book_catalogs/48",
+					"protocol": "https",
+					"host": [
+						"{{api-server}}"
+					],
+					"path": [
+						"api",
+						"full_book_catalogs",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Bookstore - GET Tampering",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{api-server}}/api/full_book_catalogs/%25%25252541PPDATA%25",
+					"protocol": "https",
+					"host": [
+						"{{api-server}}"
+					],
+					"path": [
+						"api",
+						"full_book_catalogs",
+						"%25%25252541PPDATA%25"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Bookstore - HEAD  ATT",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "HEAD",
+				"header": [
+					{
+						"key": "Content-Type",
 						"value": "application/json",
 						"type": "text"
 					}
 				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
 				"url": {
-					"raw": "https://{{api-backend}}/api/full_book_catalogs/count",
+					"raw": "https://{{api-server}}/api/full_book_catalogs/48",
 					"protocol": "https",
 					"host": [
-						"{{api-backend}}"
+						"{{api-server}}"
+					],
+					"path": [
+						"api",
+						"full_book_catalogs",
+						"48"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Bookstore - GET ATT count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "https://{{api-server}}/api/full_book_catalogs/count",
+					"protocol": "https",
+					"host": [
+						"{{api-server}}"
 					],
 					"path": [
 						"api",
@@ -64,65 +185,92 @@
 			"response": []
 		},
 		{
-			"name": "API Bookstore - DELETE",
+			"name": "API Bookstore - PUT  update value",
 			"request": {
-				"method": "DELETE",
-				"header": [],
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Practical Methods for Your Year 2000 Problem\",\n    \"isbn\": \"188477752X\",\n    \"pageCount\": 236,\n    \"publishedDate\": \"1998-01-01T08:00:00.000Z\",\n    \"shortDescription\": \"Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem.\",\n    \"longDescription\": \"Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem. By seeking to minimize the amount of work to be performed, and thus maximize the probability of having a successful Year 2000 project, the book is geared towards (a) helping the inhouse personnel understand, scope and, execute their project while (b) removing the need to spend large amounts of money on professional consulting firms. The VisualAge 2000 toolset by IBM is used for examples.    Practical Methods for Your Year 2000 Problem identifies what you need to look for, how you need to look at it, and what to do with what you see. No other book or company in the market today provides a solution as comprehensive and cost-effective as this. Starting with the clear, concise, and unambiguous definitions of what dates are and how programs and files relate to them, the book goes on to describe how to change them to be useful forever, not just up to the next century.    Finally, Practical Methods for Your Year 2000 Problem gives practical and comprehensive advice on all aspects of the Year 2000 problem, from inventorying software and hardware through to implementing large numbers of interrelated programs, files, and tables.\",\n    \"status\": \"PUBLISH\",\n    \"authors\": [\n      \"Robert Chapman\",\n      \"Your Name\"\n    ],\n    \"categories\": [\n      \"Business\"\n    ],\n    \"id\": 48\n  }"
+				},
 				"url": {
-					"raw": "https://{{api-backend}}/api/full_book_catalogs/1",
+					"raw": "https://{{api-server}}/api/full_book_catalogs",
 					"protocol": "https",
 					"host": [
-						"{{api-backend}}"
+						"{{api-server}}"
 					],
 					"path": [
 						"api",
-						"full_book_catalogs",
-						"1"
+						"full_book_catalogs"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "API Bookstore - POST",
+			"name": "API Bookstore - PUT update value Sensitive Data",
 			"request": {
 				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyIsImtpZCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUvIiwiaWF0IjoxNTU5NzY3MjM5LCJuYmYiOjE1NTk3NjcyMzksImV4cCI6MTU1OTc3MTEzOSwiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhMQUFBQWtpTVo0UUMyYXRCYnIwUldKM0FQU0VaOVozZEVNOEQ2N01ncWNDb21DZ0paL2NjenpWeU43SGNvaFQwRFVCalN5UGFWWVhRZjU0Y1U1RTkwdFpFc0NBPT0iLCJhbHRzZWNpZCI6IjU6OjEwMDMwMDAwOEQwMTc4NjciLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNzU1ZThjY2EtNmMwNS00OGY3LTlmMDUtNDdhOTBkMmE1OWVhIiwiYXBwaWRhY3IiOiIxIiwiZW1haWwiOiJFLkNhc3NlYW5vQGY1LmNvbSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2RkM2RmZDJmLTZhM2ItNDBkMS05YmUwLWJmODMyN2Q4MWM1MC8iLCJpcGFkZHIiOiIxNzcuMzMuMzUuMTI0IiwibmFtZSI6IkVkdWFyZG8gQ2Fzc2Vhbm8iLCJvaWQiOiI0YzgxNmE4MS0xMDhmLTRmYWYtOTkzZS1jZTA0ZGUzODJiZmEiLCJwdWlkIjoiMTAwMzIwMDA0MDRDMTQwRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IlN4RXVnWXZUdUV0dmgxTkRMNUNoMlB6ZEUzckpmSGhlM3pQT1dlUVYtOGMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiIzMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUiLCJ1bmlxdWVfbmFtZSI6IkUuQ2Fzc2Vhbm9AZjUuY29tIiwidXRpIjoienR1cllhelkyMFNER2c5OVpTQkNBQSIsInZlciI6IjEuMCJ9.JzOqq95yGEYswPWAEVrf1j8oLepS_g5G9zZbuyjTGK6LE4vk-h8vHxyTv2cKVUaSyiCgTmoRpWP7I9uu6Y5hHZZUeJmZQVlEXnBTDykFqhtyWfUkgfVETtjju9gdV_l0GatkHSdyoxEEWb_zFYuSPc5WoqeQKGuKn7gIM4GAd7fJPDPclOOAgGKxR_W2o5JcKV_KQwDE6wpP-AKRue9DGiU56HywLTyA6TFdj_ikzakAo9eot_mFfZdkyy7c7mzM4AS7LJLGgMssEeYs88P1tKgXeRxKR9Ubn5weU0Mv3lwKg2fChbgUo2riCnKbyPB_DFP0Rz2xekN-q4gwFCbtQw",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
+					"type": "noauth"
 				},
-				"method": "POST",
+				"method": "PUT",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"type": "text",
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"title\": \"Unlocking Android\",\n  \"isbn\": \"1933988673\",\n  \"pageCount\": 416,\n  \"publishedDate\": \"2009-04-01T07:00:00.000Z\",\n  \"thumbnailUrl\": \"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg\",\n  \"shortDescription\": \"Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.\",\n  \"longDescription\": \"Android is an open source mobile phone platform based on the Linux operating system and developed by the Open Handset Alliance, a consortium of over 30 hardware, software and telecom companies that focus on open standards for mobile devices. Led by search giant, Google, Android is designed to deliver a better and more open and cost effective mobile experience.    Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout. Based on his mobile development experience and his deep knowledge of the arcane Android technical documentation, the author conveys the know-how you need to develop practical applications that build upon or replace any of Androids features, however small.    Unlocking Android: A Developer's Guide prepares the reader to embrace the platform in easy-to-understand language and builds on this foundation with re-usable Java code examples. It is ideal for corporate and hobbyists alike who have an interest, or a mandate, to deliver software functionality for cell phones.    WHAT'S INSIDE:        * Android's place in the market      * Using the Eclipse environment for Android development      * The Intents - how and why they are used      * Application classes:            o Activity            o Service            o IntentReceiver       * User interface design      * Using the ContentProvider to manage data      * Persisting data with the SQLite database      * Networking examples      * Telephony applications      * Notification methods      * OpenGL, animation & multimedia      * Sample Applications  \",\n  \"status\": \"PUBLISH\",\n  \"authors\": [\n    \"W. Frank Ableson\",\n    \"Charlie Collins\",\n    \"Robi Sen\"\n  ],\n  \"categories\": [\n    \"Open Source\",\n    \"Mobile\"\n  ],\n     \"id\": 1\n}"
+					"raw": "{\n    \"title\": \"Practical Methods for Your Year 2000 Problem\",\n    \"isbn\": \"188477752X\",\n    \"pageCount\": 236,\n    \"publishedDate\": \"1998-01-01T08:00:00.000Z\",\n    \"shortDescription\": \"Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem.\",\n    \"longDescription\": \"Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem. By seeking to minimize the amount of work to be performed, and thus maximize the probability of having a successful Year 2000 project, the book is geared towards (a) helping the inhouse personnel understand, scope and, execute their project while (b) removing the need to spend large amounts of money on professional consulting firms. The VisualAge 2000 toolset by IBM is used for examples.    Practical Methods for Your Year 2000 Problem identifies what you need to look for, how you need to look at it, and what to do with what you see. No other book or company in the market today provides a solution as comprehensive and cost-effective as this. Starting with the clear, concise, and unambiguous definitions of what dates are and how programs and files relate to them, the book goes on to describe how to change them to be useful forever, not just up to the next century.    Finally, Practical Methods for Your Year 2000 Problem gives practical and comprehensive advice on all aspects of the Year 2000 problem, from inventorying software and hardware through to implementing large numbers of interrelated programs, files, and tables. Credit Card 5364-0756-2298-8054 \",\n    \"status\": \"PUBLISH\",\n    \"authors\": [\n      \"Robert Chapman\"\n    ],\n    \"categories\": [\n      \"Business\"\n    ],\n    \"id\": 48\n  }"
 				},
 				"url": {
-					"raw": "https://{{api-backend}}/api/full_book_catalogs",
+					"raw": "https://{{api-server}}/api/full_book_catalogs",
 					"protocol": "https",
 					"host": [
-						"{{api-backend}}"
+						"{{api-server}}"
+					],
+					"path": [
+						"api",
+						"full_book_catalogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "API Bookstore - PUT  update value XSS",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Practical Methods for Your Year 2000 Problem\",\n    \"isbn\": \"188477752X\",\n    \"pageCount\": 236,\n    \"publishedDate\": \"1998-01-01T08:00:00.000Z\",\n    \"shortDescription\": \"www.domain.com/?q=’or 1=1\",\n    \"longDescription\": \"Practical Methods for Your Year 2000 Problem gives the Year 2000 project team a step-by-step methodology for addressing the Year 2000 problem. By seeking to minimize the amount of work to be performed, and thus maximize the probability of having a successful Year 2000 project, the book is geared towards (a) helping the inhouse personnel understand, scope and, execute their project while (b) removing the need to spend large amounts of money on professional consulting firms. The VisualAge 2000 toolset by IBM is used for examples.    Practical Methods for Your Year 2000 Problem identifies what you need to look for, how you need to look at it, and what to do with what you see. No other book or company in the market today provides a solution as comprehensive and cost-effective as this. Starting with the clear, concise, and unambiguous definitions of what dates are and how programs and files relate to them, the book goes on to describe how to change them to be useful forever, not just up to the next century.    Finally, Practical Methods for Your Year 2000 Problem gives practical and comprehensive advice on all aspects of the Year 2000 problem, from inventorying software and hardware through to implementing large numbers of interrelated programs, files, and tables.\",\n    \"status\": \"PUBLISH\",\n    \"authors\": [\n      \"Robert Chapman\"\n    ],\n    \"categories\": [\n      \"Business\"\n    ],\n    \"id\": 48\n  }"
+				},
+				"url": {
+					"raw": "https://{{api-server}}/api/full_book_catalogs",
+					"protocol": "https",
+					"host": [
+						"{{api-server}}"
 					],
 					"path": [
 						"api",
@@ -142,214 +290,22 @@
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					},
-					{
-						"key": "",
-						"value": "",
 						"type": "text",
-						"disabled": true
-					}
-				],
-				"url": {
-					"raw": "https://{{api-backend}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; sleep(3000); }\"  } }",
-					"protocol": "https",
-					"host": [
-						"{{api-backend}}"
-					],
-					"path": [
-						"api",
-						"full_book_catalogs"
-					],
-					"query": [
-						{
-							"key": "filter",
-							"value": "{ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; sleep(3000); }\"  } }"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "API Bookstore - GET (Protected)",
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"url": {
-					"raw": "https://{{big-ip}}/api/full_book_catalogs/",
-					"protocol": "https",
-					"host": [
-						"{{big-ip}}"
-					],
-					"path": [
-						"api",
-						"full_book_catalogs",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "API Bookstore - DELETE (Protected)",
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyIsImtpZCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUvIiwiaWF0IjoxNTU5NzgwOTQyLCJuYmYiOjE1NTk3ODA5NDIsImV4cCI6MTU1OTc4NDg0MiwiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhMQUFBQWs5bnZMWVB2OGlvalllS1AvaElsODRzRVpYWHNidC9SckNCcnlhbjd6c2gwZWV1M3BVU3d5TGtwTlBHRXZmeGxwL3Q3aEt6aks2SXE5VXpKVVlDYnNnPT0iLCJhbHRzZWNpZCI6IjU6OjEwMDMwMDAwOEQwMTc4NjciLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNzU1ZThjY2EtNmMwNS00OGY3LTlmMDUtNDdhOTBkMmE1OWVhIiwiYXBwaWRhY3IiOiIxIiwiZW1haWwiOiJFLkNhc3NlYW5vQGY1LmNvbSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2RkM2RmZDJmLTZhM2ItNDBkMS05YmUwLWJmODMyN2Q4MWM1MC8iLCJpcGFkZHIiOiIxNzcuMzMuMzUuMTI0IiwibmFtZSI6IkVkdWFyZG8gQ2Fzc2Vhbm8iLCJvaWQiOiI0YzgxNmE4MS0xMDhmLTRmYWYtOTkzZS1jZTA0ZGUzODJiZmEiLCJwdWlkIjoiMTAwMzIwMDA0MDRDMTQwRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IlN4RXVnWXZUdUV0dmgxTkRMNUNoMlB6ZEUzckpmSGhlM3pQT1dlUVYtOGMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiIzMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUiLCJ1bmlxdWVfbmFtZSI6IkUuQ2Fzc2Vhbm9AZjUuY29tIiwidXRpIjoiUmw2UnhLTGdla21uQ0EzeDZDTUJBQSIsInZlciI6IjEuMCJ9.IfibR21-zu8_djjIlbweWnDa9TJK1-D9sjkmPyCIX_LSH5xutIALChTZ85S2m-wVGJJaaUYC56k24u2KI5_SWLDAGeFTgxDqSPvASOjXRT3kxCy0HSHkMf5UBlS4iFQ9BuPEB8m-T1Y3yhhA9CChBlQyenKR47vpEDdn4uC3m0l2ZYLRbCuNOZztJsEZwRW6Zkm2Gl4BI0rz8uGD5Xr0tsnCskE5m8avOu-b_BTUDwOgok0BgEptmKKP60Kzsm_ndH1pKxZ_7yr2aac5aa0rxHKQ0rxqB117cM0gEmlpDdX3yVmUpKChyjTQq2dUfl9yjeOkTFvPX4FLeNvEUxd71w",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "https://{{big-ip}}/api/full_book_catalogs/1",
-					"protocol": "https",
-					"host": [
-						"{{big-ip}}"
-					],
-					"path": [
-						"api",
-						"full_book_catalogs",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "API Bookstore - POST (Protected)",
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyIsImtpZCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUvIiwiaWF0IjoxNTU5NzgwOTQyLCJuYmYiOjE1NTk3ODA5NDIsImV4cCI6MTU1OTc4NDg0MiwiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhMQUFBQWs5bnZMWVB2OGlvalllS1AvaElsODRzRVpYWHNidC9SckNCcnlhbjd6c2gwZWV1M3BVU3d5TGtwTlBHRXZmeGxwL3Q3aEt6aks2SXE5VXpKVVlDYnNnPT0iLCJhbHRzZWNpZCI6IjU6OjEwMDMwMDAwOEQwMTc4NjciLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNzU1ZThjY2EtNmMwNS00OGY3LTlmMDUtNDdhOTBkMmE1OWVhIiwiYXBwaWRhY3IiOiIxIiwiZW1haWwiOiJFLkNhc3NlYW5vQGY1LmNvbSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2RkM2RmZDJmLTZhM2ItNDBkMS05YmUwLWJmODMyN2Q4MWM1MC8iLCJpcGFkZHIiOiIxNzcuMzMuMzUuMTI0IiwibmFtZSI6IkVkdWFyZG8gQ2Fzc2Vhbm8iLCJvaWQiOiI0YzgxNmE4MS0xMDhmLTRmYWYtOTkzZS1jZTA0ZGUzODJiZmEiLCJwdWlkIjoiMTAwMzIwMDA0MDRDMTQwRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IlN4RXVnWXZUdUV0dmgxTkRMNUNoMlB6ZEUzckpmSGhlM3pQT1dlUVYtOGMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiIzMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUiLCJ1bmlxdWVfbmFtZSI6IkUuQ2Fzc2Vhbm9AZjUuY29tIiwidXRpIjoiUmw2UnhLTGdla21uQ0EzeDZDTUJBQSIsInZlciI6IjEuMCJ9.IfibR21-zu8_djjIlbweWnDa9TJK1-D9sjkmPyCIX_LSH5xutIALChTZ85S2m-wVGJJaaUYC56k24u2KI5_SWLDAGeFTgxDqSPvASOjXRT3kxCy0HSHkMf5UBlS4iFQ9BuPEB8m-T1Y3yhhA9CChBlQyenKR47vpEDdn4uC3m0l2ZYLRbCuNOZztJsEZwRW6Zkm2Gl4BI0rz8uGD5Xr0tsnCskE5m8avOu-b_BTUDwOgok0BgEptmKKP60Kzsm_ndH1pKxZ_7yr2aac5aa0rxHKQ0rxqB117cM0gEmlpDdX3yVmUpKChyjTQq2dUfl9yjeOkTFvPX4FLeNvEUxd71w",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"title\": \"Unlocking Android\",\n  \"isbn\": \"1933988673\",\n  \"pageCount\": 416,\n  \"publishedDate\": \"2009-04-01T07:00:00.000Z\",\n  \"thumbnailUrl\": \"https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/ableson.jpg\",\n  \"shortDescription\": \"Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout.\",\n  \"longDescription\": \"Android is an open source mobile phone platform based on the Linux operating system and developed by the Open Handset Alliance, a consortium of over 30 hardware, software and telecom companies that focus on open standards for mobile devices. Led by search giant, Google, Android is designed to deliver a better and more open and cost effective mobile experience.    Unlocking Android: A Developer's Guide provides concise, hands-on instruction for the Android operating system and development tools. This book teaches important architectural concepts in a straightforward writing style and builds on this with practical and useful examples throughout. Based on his mobile development experience and his deep knowledge of the arcane Android technical documentation, the author conveys the know-how you need to develop practical applications that build upon or replace any of Androids features, however small.    Unlocking Android: A Developer's Guide prepares the reader to embrace the platform in easy-to-understand language and builds on this foundation with re-usable Java code examples. It is ideal for corporate and hobbyists alike who have an interest, or a mandate, to deliver software functionality for cell phones.    WHAT'S INSIDE:        * Android's place in the market      * Using the Eclipse environment for Android development      * The Intents - how and why they are used      * Application classes:            o Activity            o Service            o IntentReceiver       * User interface design      * Using the ContentProvider to manage data      * Persisting data with the SQLite database      * Networking examples      * Telephony applications      * Notification methods      * OpenGL, animation & multimedia      * Sample Applications  \",\n  \"status\": \"PUBLISH\",\n  \"authors\": [\n    \"W. Frank Ableson\",\n    \"Charlie Collins\",\n    \"Robi Sen\"\n  ],\n  \"categories\": [\n    \"Open Source\",\n    \"Mobile\"\n  ],\n     \"id\": 1\n}"
-				},
-				"url": {
-					"raw": "https://{{big-ip}}/api/full_book_catalogs",
-					"protocol": "https",
-					"host": [
-						"{{big-ip}}"
-					],
-					"path": [
-						"api",
-						"full_book_catalogs"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "NoSQL Injection (Protected)",
-			"request": {
-				"auth": {
-					"type": "oauth2",
-					"oauth2": [
-						{
-							"key": "accessToken",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyIsImtpZCI6IkN0ZlFDOExlLThOc0M3b0MyelFrWnBjcmZPYyJ9.eyJhdWQiOiIwMDAwMDAwMi0wMDAwLTAwMDAtYzAwMC0wMDAwMDAwMDAwMDAiLCJpc3MiOiJodHRwczovL3N0cy53aW5kb3dzLm5ldC8zMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUvIiwiaWF0IjoxNTU5NzgwOTQyLCJuYmYiOjE1NTk3ODA5NDIsImV4cCI6MTU1OTc4NDg0MiwiYWNyIjoiMSIsImFpbyI6IkFVUUF1LzhMQUFBQWs5bnZMWVB2OGlvalllS1AvaElsODRzRVpYWHNidC9SckNCcnlhbjd6c2gwZWV1M3BVU3d5TGtwTlBHRXZmeGxwL3Q3aEt6aks2SXE5VXpKVVlDYnNnPT0iLCJhbHRzZWNpZCI6IjU6OjEwMDMwMDAwOEQwMTc4NjciLCJhbXIiOlsicHdkIl0sImFwcGlkIjoiNzU1ZThjY2EtNmMwNS00OGY3LTlmMDUtNDdhOTBkMmE1OWVhIiwiYXBwaWRhY3IiOiIxIiwiZW1haWwiOiJFLkNhc3NlYW5vQGY1LmNvbSIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0L2RkM2RmZDJmLTZhM2ItNDBkMS05YmUwLWJmODMyN2Q4MWM1MC8iLCJpcGFkZHIiOiIxNzcuMzMuMzUuMTI0IiwibmFtZSI6IkVkdWFyZG8gQ2Fzc2Vhbm8iLCJvaWQiOiI0YzgxNmE4MS0xMDhmLTRmYWYtOTkzZS1jZTA0ZGUzODJiZmEiLCJwdWlkIjoiMTAwMzIwMDA0MDRDMTQwRSIsInNjcCI6IlVzZXIuUmVhZCIsInN1YiI6IlN4RXVnWXZUdUV0dmgxTkRMNUNoMlB6ZEUzckpmSGhlM3pQT1dlUVYtOGMiLCJ0ZW5hbnRfcmVnaW9uX3Njb3BlIjoiTkEiLCJ0aWQiOiIzMGNjMzJhNC0yMDBiLTQyMmItYjc3OS0zOGU0OWJhOGRmNGUiLCJ1bmlxdWVfbmFtZSI6IkUuQ2Fzc2Vhbm9AZjUuY29tIiwidXRpIjoiUmw2UnhLTGdla21uQ0EzeDZDTUJBQSIsInZlciI6IjEuMCJ9.IfibR21-zu8_djjIlbweWnDa9TJK1-D9sjkmPyCIX_LSH5xutIALChTZ85S2m-wVGJJaaUYC56k24u2KI5_SWLDAGeFTgxDqSPvASOjXRT3kxCy0HSHkMf5UBlS4iFQ9BuPEB8m-T1Y3yhhA9CChBlQyenKR47vpEDdn4uC3m0l2ZYLRbCuNOZztJsEZwRW6Zkm2Gl4BI0rz8uGD5Xr0tsnCskE5m8avOu-b_BTUDwOgok0BgEptmKKP60Kzsm_ndH1pKxZ_7yr2aac5aa0rxHKQ0rxqB117cM0gEmlpDdX3yVmUpKChyjTQq2dUfl9yjeOkTFvPX4FLeNvEUxd71w",
-							"type": "string"
-						},
-						{
-							"key": "tokenType",
-							"value": "Bearer",
-							"type": "string"
-						},
-						{
-							"key": "addTokenTo",
-							"value": "header",
-							"type": "string"
-						}
-					]
-				},
-				"method": "GET",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
+						"value": "application/json"
 					},
 					{
-						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 						"key": "Authorization",
-						"value": "",
 						"type": "text",
+						"value": "",
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
 						"disabled": true
 					}
 				],
 				"url": {
-					"raw": "https://{{big-ip}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; while(true); }\"  } }",
+					"raw": "https://{{api-server}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; while(true); }\"  } }",
 					"protocol": "https",
 					"host": [
-						"{{big-ip}}"
+						"{{api-server}}"
 					],
 					"path": [
 						"api",
@@ -366,25 +322,5 @@
 			"response": []
 		}
 	],
-	"auth": {
-		"type": "apikey",
-		"apikey": [
-			{
-				"key": "in",
-				"value": "header",
-				"type": "string"
-			},
-			{
-				"key": "value",
-				"value": "https://apimgmtst0xjkanrdu0xetdw.blob.core.windows.net/apiinspectorcontainer/NT3I0f3Q6EZ4y41J8Goa-g2-12?sv=2017-04-17&sr=b&sig=GItqlQTwI%2Fr58ajzatqcbqy74prUcGqxKc6wDw1QIjE%3D&se=2019-05-02T02%3A03%3A04Z&sp=r&traceId=a95f52136b5d429d9b096ba9b8d9b258",
-				"type": "string"
-			},
-			{
-				"key": "key",
-				"value": "ocp-apim-trace-location",
-				"type": "string"
-			}
-		]
-	},
 	"protocolProfileBehavior": {}
 }
