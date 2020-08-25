@@ -123,7 +123,7 @@
 			"response": []
 		},
 		{
-			"name": "API Bookstore - HEAD  ATT",
+			"name": "API Bookstore - HEAD",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -159,7 +159,7 @@
 			"response": []
 		},
 		{
-			"name": "API Bookstore - GET ATT count",
+			"name": "API Bookstore - GET count",
 			"request": {
 				"method": "GET",
 				"header": [
