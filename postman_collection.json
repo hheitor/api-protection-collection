@@ -20,7 +20,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{api-server}}//api/full_book_catalogs",
+					"raw": "https://{{api-server}}/api/full_book_catalogs",
 					"protocol": "https",
 					"host": [
 						"{{api-server}}"
