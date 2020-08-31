@@ -249,7 +249,7 @@
 			"response": []
 		},
 		{
-			"name": "API Bookstore - PUT  update value XSS",
+			"name": "API Bookstore - PUT  update value with SQLi",
 			"request": {
 				"auth": {
 					"type": "noauth"
