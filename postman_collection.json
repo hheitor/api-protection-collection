@@ -302,7 +302,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://{{api-server}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; while(true); }\"  } }",
+					"raw": "https://{{api-server}}/api/full_book_catalogs?filter={ \"where\": {\"$where\" : \"function(){ const msg='Waiting 3 seconds...' ;  print(msg);  print(this.title) ; sleep(3000); }\"  } }",
 					"protocol": "https",
 					"host": [
 						"{{api-server}}"
